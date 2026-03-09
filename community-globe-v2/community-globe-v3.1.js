@@ -1165,7 +1165,7 @@
     };
 
     CommunityGlobe.prototype._buildContinentFills = function() {
-        var canvas = document.createElement('canvas'); canvas.width = 4096; canvas.height = 2048;
+        var canvas = document.createElement('canvas'); canvas.width = 5824; canvas.height = 2912;
         var ctx = canvas.getContext('2d'); ctx.clearRect(0, 0, canvas.width, canvas.height);
         var fillTex = new THREE.CanvasTexture(canvas); fillTex.minFilter = THREE.LinearFilter;
         this._continentTex = fillTex; // store ref for ocean line masking
