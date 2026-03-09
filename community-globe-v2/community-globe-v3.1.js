@@ -527,7 +527,8 @@
             });
         }
         if (playerMinimizeBtn) {
-            playerMinimizeBtn.addEventListener('click', function() {
+            playerMinimizeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
                 self.playerModal.classList.add('minimized');
             });
         }
