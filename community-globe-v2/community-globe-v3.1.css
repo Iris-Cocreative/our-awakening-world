@@ -81,7 +81,7 @@
 .cg-coords { position: absolute; bottom: 24px; left: 24px; z-index: 10; font-size: clamp(0.75rem, 0.65rem + 0.4vw, 1rem); font-weight: 500; color: #444; letter-spacing: 1px; pointer-events: none; }
 
 /* Controls hint */
-.cg-controls { position: absolute; bottom: 24px; right: 24px; z-index: 10; font-size: clamp(0.688rem, 0.6rem + 0.35vw, 0.938rem); font-weight: 500; color: #444; letter-spacing: 1px; text-align: right; pointer-events: none; }
+.cg-controls { position: absolute; bottom: 52px; right: 24px; z-index: 10; font-size: clamp(0.688rem, 0.6rem + 0.35vw, 0.938rem); font-weight: 500; color: #444; letter-spacing: 1px; text-align: right; pointer-events: none; }
 
 /* =========================================
    View Tabs — Globe | Flat | Gallery
@@ -957,7 +957,7 @@
 /* Action buttons wrapper */
 .cg-action-buttons {
     position: absolute;
-    bottom: 60px;
+    bottom: 24px;
     right: 24px;
     z-index: 20;
     display: flex;
@@ -1381,22 +1381,22 @@
    ========================================= */
 .cg-credit {
     position: absolute;
-    bottom: 12px;
-    left: 16px;
+    bottom: 10px;
+    left: 24px;
     z-index: 15;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.65rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: clamp(0.6rem, 0.5rem + 0.25vw, 0.75rem);
+    color: #999;
     letter-spacing: 0.3px;
     pointer-events: auto;
 }
 .cg-credit a {
-    color: rgba(255, 255, 255, 0.55);
+    color: #666;
     text-decoration: none;
     transition: color 0.2s;
 }
 .cg-credit a:hover {
-    color: rgba(255, 255, 255, 0.85);
+    color: #111;
     text-decoration: underline;
 }
 
@@ -1456,10 +1456,14 @@
     }
 
     .cg-action-buttons {
-        bottom: 48px;
+        bottom: 12px;
         right: 12px;
         flex-direction: column;
         gap: 6px;
+    }
+    .cg-credit {
+        bottom: 6px;
+        left: 12px;
     }
     .cg-nominate-btn,
     .cg-stay-connected-btn,
