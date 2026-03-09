@@ -812,7 +812,7 @@
     CommunityGlobe.prototype._buildCredit = function() {
         var credit = document.createElement('div');
         credit.className = 'cg-credit';
-        credit.innerHTML = 'Concept and implementation by <a href="/about-james">James Bolden</a>';
+        credit.innerHTML = '\u00a9 ' + new Date().getFullYear() + ' Concept and implementation by <a href="/about-james">James Bolden</a>';
         this.container.appendChild(credit);
     }
 
