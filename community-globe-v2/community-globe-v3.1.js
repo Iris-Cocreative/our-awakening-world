@@ -914,11 +914,11 @@
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
-        // Initial view: centered on lat 24, lon 56 (Americas + partial Europe)
+        // Initial view: centered on lat 24, lon -56 (Atlantic, Americas + partial Europe)
         // Zoom out more on mobile so UI text and filters are readable
-        var camDist = w < 768 ? 24 : 18;
+        var camDist = w < 768 ? 28 : 18;
         var scale = camDist / 18;
-        this.camera.position.set(9.2 * scale, 7.3 * scale, -13.6 * scale);
+        this.camera.position.set(9.2 * scale, 7.3 * scale, 13.6 * scale);
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         this.renderer.setSize(w, h);
