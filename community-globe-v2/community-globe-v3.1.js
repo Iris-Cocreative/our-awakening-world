@@ -321,9 +321,7 @@
                     setTimeout(function() { loading.remove(); }, 1000);
                 }, 400);
             }
-            // Show welcome modal for first-time visitors (after globe is visible)
-            var welcomeSelf = this;
-            setTimeout(function() { welcomeSelf._showWelcomeIfFirstVisit(); }, 800);
+            // Welcome modal is now triggered by the "How to Explore" button
         } catch (err) {
             console.error('[awakening-earth-v3.1] Init error:', err);
             this.container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;min-height:400px;color:#999;">Error loading globe. Please refresh.</div>';
@@ -635,6 +633,14 @@
         });
         actionBtns.appendChild(stayConnBtn);
 
+        var helpBtn = document.createElement('button');
+        helpBtn.className = 'cg-help-btn';
+        helpBtn.innerHTML = '? How to Explore';
+        helpBtn.addEventListener('click', function() {
+            self.welcomeModal.classList.add('visible');
+        });
+        actionBtns.appendChild(helpBtn);
+
         this.container.appendChild(actionBtns);
 
         this.nominateModal = document.createElement('div');
@@ -908,7 +914,8 @@
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
-        this.camera.position.set(0, 2, 18);
+        // Initial view: Americas, slightly elevated
+        this.camera.position.set(3, 5, 17);
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         this.renderer.setSize(w, h);

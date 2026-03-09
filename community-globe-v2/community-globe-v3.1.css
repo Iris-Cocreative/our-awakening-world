@@ -966,7 +966,8 @@
 }
 
 .cg-nominate-btn,
-.cg-stay-connected-btn {
+.cg-stay-connected-btn,
+.cg-help-btn {
     padding: 8px 16px;
     border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 20px;
@@ -982,7 +983,8 @@
     transition: all 0.2s ease;
 }
 .cg-nominate-btn:hover,
-.cg-stay-connected-btn:hover {
+.cg-stay-connected-btn:hover,
+.cg-help-btn:hover {
     background: rgba(0, 0, 0, 0.06);
     color: #111;
     border-color: rgba(0, 0, 0, 0.2);
@@ -1460,7 +1462,8 @@
         gap: 6px;
     }
     .cg-nominate-btn,
-    .cg-stay-connected-btn {
+    .cg-stay-connected-btn,
+    .cg-help-btn {
         font-size: clamp(0.563rem, 0.5rem + 0.25vw, 0.75rem);
         padding: 6px 12px;
     }
