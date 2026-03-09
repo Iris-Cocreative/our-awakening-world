@@ -73,7 +73,7 @@
     color: #666;
     letter-spacing: 0.3px;
     line-height: 1.5;
-    max-width: 280px;
+    max-width: 360px;
     margin-bottom: 4px;
 }
 
@@ -136,7 +136,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
-    max-width: 420px;
+    max-width: 360px;
 }
 
 .cg-filter-btn {
