@@ -1247,6 +1247,10 @@
     background: rgba(0, 0, 0, 0.025);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
+.cg-welcome-item:has(.cg-welcome-preview) {
+    flex-direction: column;
+    gap: 8px;
+}
 .cg-welcome-icon {
     font-size: 1.1rem;
     flex-shrink: 0;
@@ -1289,6 +1293,86 @@
     transition: background 0.2s;
 }
 .cg-welcome-start:hover { background: #333; }
+
+/* Welcome modal — UI preview elements */
+.cg-welcome-preview {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+.cg-welcome-preview-tabs,
+.cg-welcome-preview-toggle {
+    display: flex;
+    gap: 2px;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    padding: 2px;
+}
+.cg-wpt, .cg-wptg {
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #888;
+    white-space: nowrap;
+}
+.cg-wpt.active, .cg-wptg.active {
+    background: rgba(0, 0, 0, 0.08);
+    color: #111;
+    font-weight: 600;
+}
+.cg-welcome-preview-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+.cg-wpf {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 7px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #666;
+    white-space: nowrap;
+}
+.cg-wpf.active {
+    background: rgba(0, 0, 0, 0.08);
+    color: #111;
+    font-weight: 600;
+}
+.cg-wpf-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+.cg-welcome-credit {
+    text-align: center;
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: clamp(0.6rem, 0.55rem + 0.2vw, 0.75rem);
+    color: #999;
+    letter-spacing: 0.3px;
+}
+.cg-welcome-credit a {
+    color: #555;
+    text-decoration: underline;
+    text-decoration-color: rgba(0, 0, 0, 0.2);
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+.cg-welcome-credit a:hover {
+    color: #111;
+}
 
 /* =========================================
    Credit Attribution

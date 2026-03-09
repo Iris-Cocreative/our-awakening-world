@@ -739,18 +739,37 @@
         this.welcomeModal.innerHTML =
             '<div class="cg-welcome-inner">' +
               '<h2>Welcome to Our Awakening Earth</h2>' +
-              '<p class="cg-welcome-intro">Explore a growing community of creators, artists, musicians, and visionaries contributing to our collective awakening. Here\'s how to navigate:</p>' +
+              '<p class="cg-welcome-intro">Explore a growing collection of creators, artists, musicians, and visionaries contributing to our collective awakening. Here\'s how to navigate:</p>' +
               '<div class="cg-welcome-sections">' +
                 '<div class="cg-welcome-item">' +
-                  '<div class="cg-welcome-icon">\uD83C\uDF0D</div>' +
+                  '<div class="cg-welcome-preview">' +
+                    '<div class="cg-welcome-preview-tabs">' +
+                      '<span class="cg-wpt active">Globe</span>' +
+                      '<span class="cg-wpt">Flat</span>' +
+                      '<span class="cg-wpt">Gallery</span>' +
+                    '</div>' +
+                  '</div>' +
                   '<div class="cg-welcome-item-text"><strong>Viewing Modes</strong><span>Switch between Globe, Flat Map, and Gallery views using the tabs in the top right corner.</span></div>' +
                 '</div>' +
                 '<div class="cg-welcome-item">' +
-                  '<div class="cg-welcome-icon">\uD83C\uDFA8</div>' +
+                  '<div class="cg-welcome-preview">' +
+                    '<div class="cg-welcome-preview-filters">' +
+                      '<span class="cg-wpf active">See All</span>' +
+                      '<span class="cg-wpf"><span class="cg-wpf-dot" style="background:#9b8bf4"></span>Visual Artist</span>' +
+                      '<span class="cg-wpf"><span class="cg-wpf-dot" style="background:#e8786a"></span>Musician</span>' +
+                      '<span class="cg-wpf"><span class="cg-wpf-dot" style="background:#5b8ecc"></span>Author</span>' +
+                      '<span class="cg-wpf"><span class="cg-wpf-dot" style="background:#5bb8a6"></span>Community</span>' +
+                    '</div>' +
+                  '</div>' +
                   '<div class="cg-welcome-item-text"><strong>Category Filters</strong><span>Filter creators by discipline \u2014 Visual Artists, Musicians, Authors, Community builders, and more \u2014 using the filter bar on the left.</span></div>' +
                 '</div>' +
                 '<div class="cg-welcome-item">' +
-                  '<div class="cg-welcome-icon">\uD83D\uDDBC\uFE0F</div>' +
+                  '<div class="cg-welcome-preview">' +
+                    '<div class="cg-welcome-preview-toggle">' +
+                      '<span class="cg-wptg">Profile</span>' +
+                      '<span class="cg-wptg active">Work</span>' +
+                    '</div>' +
+                  '</div>' +
                   '<div class="cg-welcome-item-text"><strong>Profile / Work Toggle</strong><span>Switch the card images between profile photos and creative work samples to explore each creator\'s art.</span></div>' +
                 '</div>' +
                 '<div class="cg-welcome-item">' +
@@ -759,6 +778,7 @@
                 '</div>' +
               '</div>' +
               '<button class="cg-welcome-start">Start Exploring</button>' +
+              '<p class="cg-welcome-credit">Concept and implementation by <a href="/about-james">James Bolden</a></p>' +
             '</div>';
         this.container.appendChild(this.welcomeModal);
 
@@ -777,14 +797,7 @@
     };
 
     CommunityGlobe.prototype._showWelcomeIfFirstVisit = function() {
-        try {
-            if (!localStorage.getItem('cg-welcome-shown')) {
-                this.welcomeModal.classList.add('visible');
-            }
-        } catch(e) {
-            // localStorage unavailable — show anyway
-            this.welcomeModal.classList.add('visible');
-        }
+        this.welcomeModal.classList.add('visible');
     };
 
     // =========================================================================
