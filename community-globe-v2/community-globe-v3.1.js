@@ -1172,7 +1172,7 @@
         var self = this;
         var imageObj = new Image(); imageObj.crossOrigin = "Anonymous";
         var basePath = (window.CommunityGlobeConfig && window.CommunityGlobeConfig.assetBasePath) || './';
-        imageObj.src = basePath + "Iris_a_canvas_covered_in_paint_beautiful_abstract_art_thick_bru_9685ecde-4301-4db4-8f52-1df4ad378f65.png";
+        imageObj.src = basePath + "globe-paint-texture-v2.jpg";
         imageObj.onload = function() {
             function mp(lon, lat) { return { x: (lon + 180) * (canvas.width / 360), y: (90 - lat) * (canvas.height / 180) }; }
             ctx.beginPath();
