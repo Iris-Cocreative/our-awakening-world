@@ -914,8 +914,11 @@
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 1000);
-        // Initial view: Americas, slightly elevated
-        this.camera.position.set(3, 5, 17);
+        // Initial view: centered on lat 24, lon 56 (Americas + partial Europe)
+        // Zoom out more on mobile so UI text and filters are readable
+        var camDist = w < 768 ? 24 : 18;
+        var scale = camDist / 18;
+        this.camera.position.set(9.2 * scale, 7.3 * scale, -13.6 * scale);
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         this.renderer.setSize(w, h);
@@ -1185,7 +1188,11 @@
     };
 
     CommunityGlobe.prototype._buildContinentFills = function() {
-        var canvas = document.createElement('canvas'); canvas.width = 10000; canvas.height = 5000;
+        // Use largest canvas the GPU supports (10000x5000 ideal, but many mobile GPUs cap at 4096)
+        var tmpC = document.createElement('canvas'); var gl = tmpC.getContext('webgl') || tmpC.getContext('experimental-webgl');
+        var maxTex = gl ? gl.getParameter(gl.MAX_TEXTURE_SIZE) : 4096;
+        var texW = Math.min(10000, maxTex); var texH = Math.min(5000, Math.floor(maxTex / 2));
+        var canvas = document.createElement('canvas'); canvas.width = texW; canvas.height = texH;
         var ctx = canvas.getContext('2d'); ctx.clearRect(0, 0, canvas.width, canvas.height);
         var fillTex = new THREE.CanvasTexture(canvas); fillTex.minFilter = THREE.LinearFilter;
         this._continentTex = fillTex; // store ref for ocean line masking
