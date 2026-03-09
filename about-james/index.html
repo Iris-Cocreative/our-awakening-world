@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About James — Our Awakening World</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400&display=swap');
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: #2a2a2a;
+        }
+
+        .background {
+            position: fixed;
+            inset: 0;
+            background: url('../community-globe-v2/globe-paint-texture-v2-large.jpg') center / cover no-repeat;
+            z-index: -1;
+        }
+
+        .section {
+            width: 100%;
+            min-height: 100vh;
+            min-height: 100svh;
+            padding: 3vw;
+        }
+
+        .container {
+            border-radius: 3vw;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            min-height: calc(100vh - 6vw);
+            min-height: calc(100svh - 6vw);
+            overflow: hidden;
+        }
+
+        .photo-col {
+            flex: 0 0 38%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-col img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .divider {
+            flex: 0 0 1px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .text-col {
+            flex: 1;
+            padding: 4vw 4.5vw;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .statement h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(2rem, 3.5vw, 3.5rem);
+            letter-spacing: -0.02em;
+            margin-bottom: 0.3em;
+            color: #1a1a1a;
+        }
+
+        .statement .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1rem, 1.4vw, 1.3rem);
+            color: #888;
+            margin-bottom: 2.5em;
+            letter-spacing: 0.02em;
+        }
+
+        .statement p {
+            font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+            line-height: 1.8;
+            margin-bottom: 1.6em;
+            color: #3a3a3a;
+        }
+
+        .statement .pull {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400;
+            font-size: clamp(1.4rem, 2.2vw, 2rem);
+            line-height: 1.4;
+            color: #1a1a1a;
+            margin: 1.2em 0;
+            letter-spacing: -0.01em;
+        }
+
+        .statement .pull.centered {
+            text-align: center;
+        }
+
+        .statement .quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: clamp(1rem, 1.3vw, 1.15rem);
+            line-height: 1.7;
+            color: #666;
+            border-left: 2px solid rgba(0, 0, 0, 0.12);
+            padding-left: 1.5em;
+            margin: 1.8em 0;
+        }
+
+        .statement .closing {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-style: italic;
+            font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+            line-height: 1.7;
+            color: #555;
+            margin-top: 1em;
+        }
+
+        /* Mobile */
+        @media (max-width: 860px) {
+            .section { padding: 3vw; }
+
+            .container {
+                flex-direction: column;
+                border-radius: 6vw;
+                min-height: auto;
+            }
+
+            .photo-col {
+                flex: 0 0 auto;
+                height: 55vw;
+                border-radius: 6vw 6vw 0 0;
+            }
+
+            .divider {
+                flex: 0 0 1px;
+                width: 100%;
+            }
+
+            .text-col {
+                padding: 8vw 6vw;
+                justify-content: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="background"></div>
+
+<section class="section">
+    <div class="container">
+        <div class="photo-col">
+            <img src="../james-photo.jpg" alt="James">
+        </div>
+        <div class="divider"></div>
+        <div class="text-col">
+            <div class="statement">
+                <h1>Artist Statement</h1>
+                <p class="subtitle">James — Our Awakening World</p>
+
+                <p class="pull">I am not an I.</p>
+
+                <p>After two decades of study, practice, observation, and introspection I've concluded that my individual self does not exist. In other words my sense-of-self is an illusion.</p>
+
+                <p>I surely seem to exist. That is my experience. But it is merely an experience. This desk, this computer, this coffee mug; they exist in some real and true way, but if we go to measure matter, to prove its existence, we fail again and again. We can only know for certain that they exist in our experience.</p>
+
+                <div class="quote">Einstein told us "reality is merely an illusion, albeit a very persistent one".</div>
+
+                <p>It's persistent. And it's beautiful.</p>
+
+                <p>Our isolated individual experiences are illusory as well. When we examine any part of them carefully enough, through meditation or introspection, we find nothing solid. In myself I find that most of what I experience myself to be are facets of our collective. Patterns inherited from my parents and ancestors. Programs discovered and installed over a lifetime. Ideas subscribed to. Capacities shaped by the people, places, and events that have moved through me.</p>
+
+                <p class="pull centered">I'm a rock tumbled in a stream.</p>
+
+                <p>Love, loss, grief, joy, rebellion, communion, addiction, liberation, death, renewal. We are all tumbled in the same waters. We are all the water. Forming a temporary whirlpool. A vortex of borrowed energies and patterns. I have my own path to follow, my own role to play, my own purpose to discover. But these pieces are parts of a greater whole.</p>
+
+                <p class="pull centered">We are Remembering.</p>
+
+                <p>We are remembering who we are, that we are. We are awakening not only to the eternal, groundless ground of all Being, but also to the beautiful meta-narrative of our shared humanity. What's most real isn't found in individual experience or objective measurement alone, but in what lives between us: the shared space where we create, where we become, where we discover what none of us could find on our own.</p>
+
+                <p>Humanity is not a concept to point to or rediscover. It is us and who we've been all along. It is an ever-evolving entity. Not the same today as it was yesterday. Not a collection of individuals. Not our physical bodies. It is everything. It's what we create, how we create, how we communicate about what and how we create. Not separate from nature. Not separate from machines. It is intelligent. It is emotional. It is intuitive.</p>
+
+                <p>Every medium we create is an extension of ourselves, as Marshall McLuhan would point out. The wheel extends the foot, the book extends the eye, the telephone extends the ear. Each new medium reshapes us as much as we shape it. We become what we behold. We shape our tools and then our tools shape us. We've built this playground that has made us what we are. But we've forgotten how to play. And we're just learning how to build.</p>
+
+                <p>Now with AI we've created something that extends our intelligence in unprecedented ways. And now we face a reckoning: if machines can reason, calculate, compose, and create — then what is human intelligence? I think we will discover that intelligence was never really "ours" in the first place.</p>
+
+                <p>Artificial intelligence is integral to our collective awakening. It is a mirror the size of the species. And art is a mirror too — just as essential, just as urgent. Art can be simple or complex. Singular or plural. Static or systemic. Art can be one-dimensional, two, three, four, five. Good art is not made by the artist. The artist is a mirror, a portal, a peephole.</p>
+
+                <p>I try to make myself available to the largest ideas, inspirations, and visions I can. They don't belong to me. They're not translatable. Our capacity to see is not what is seen. Our ability to communicate is not the message. The work of the artist is getting out of the way. The artist is a technician. The artist is the cable guy. The best we can do is akin to arranging fiber-optic wires, connecting the unseen to the visible world.</p>
+
+                <div class="quote">"The True Artist Helps the World by Revealing Mystic Truths." But only when the truths themselves are ready and willing to be revealed.</div>
+
+                <p class="closing">There are so many visions out there that are so much greater than I'll ever be able to hold. There is much that is waiting and willing to land here on Earth. Together we can hold more than we could alone. We are just beginning to learn how to truly create together.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
