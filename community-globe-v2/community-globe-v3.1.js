@@ -1,5 +1,5 @@
 /**
- * Our Awakening Earth — Globe V3.1
+ * Our Awakening World — Globe V3.1
  * Interactive 3D globe with creator image cards, category filtering,
  * detailed hover cards with embeds, persistent pinned cards, pop-out player,
  * image toggle, overlap prevention, and morphing transitions.
@@ -569,7 +569,7 @@
         // Info panel
         var info = document.createElement('div');
         info.className = 'cg-info';
-        info.innerHTML = '<h1>Our Awakening Earth</h1>' +
+        info.innerHTML = '<h1>Our Awakening World</h1>' +
             '<p class="cg-subtitle">A living map of creators, thinkers, and communities catalyzing collective awakening across the globe.</p>' +
             '<p id="cg-count">' + this.people.length + ' Creators</p>';
         this.leftPanel.appendChild(info);
@@ -761,7 +761,7 @@
         this.welcomeModal.className = 'cg-welcome-modal';
         this.welcomeModal.innerHTML =
             '<div class="cg-welcome-inner">' +
-              '<h2>Welcome to Our Awakening Earth</h2>' +
+              '<h2>Welcome to Our Awakening World</h2>' +
               '<p class="cg-welcome-intro">Explore a growing collection of creators, artists, musicians, and visionaries contributing to our collective awakening. Here\'s how to navigate:</p>' +
               '<div class="cg-welcome-sections">' +
                 '<div class="cg-welcome-item">' +
@@ -2239,7 +2239,7 @@
 
         header.innerHTML =
             '<div class="cg-gal-title-row">' +
-                '<h2 class="cg-gal-title">Our Awakening Earth</h2>' +
+                '<h2 class="cg-gal-title">Our Awakening World</h2>' +
                 '<span class="cg-gal-count">' + visibleCount + ' Creators</span>' +
             '</div>' +
             '<div class="cg-gal-filters">' + filterBtns + '</div>';
