@@ -1445,9 +1445,10 @@
     }
 
     .cg-player-modal {
-        bottom: 12px;
+        top: 12px;
         left: 12px;
         right: 12px;
+        bottom: auto;
         width: auto;
     }
     .cg-player-modal.video-player {
@@ -1455,6 +1456,10 @@
     }
     .cg-player-modal.expanded {
         top: 12px;
+        bottom: auto;
+    }
+    .cg-player-expand {
+        display: none !important;
     }
 
     .cg-action-buttons {
