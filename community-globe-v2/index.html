@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Globe V2 Local Test</title>
+    <!-- Supabase JS Client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #community-globe {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="community-globe"></div>
+
+    <script>
+        // Mock Supabase Client holding dummy data
+        const dummyData = {
+            profiles: [
+                { id: 'p1', full_name: 'Alice Smith', avatar_url: '', banner_url: '', bio: 'Designer', location: 'New York', role: 'UX Designer', company: 'Acme', slug: 'alice-smith', latitude: 40.7128, longitude: -74.0060 },
+                { id: 'p2', full_name: 'Bob Jones', avatar_url: '', banner_url: '', bio: 'Developer', location: 'London', role: 'Frontend Eng', company: 'Globex', slug: 'bob-jones', latitude: 51.5074, longitude: -0.1278 },
+                { id: 'p3', full_name: 'Charlie Brown', avatar_url: '', banner_url: '', bio: 'Manager', location: 'Tokyo', role: 'Product Manager', company: 'Initech', slug: 'charlie-brown', latitude: 35.6762, longitude: 139.6503 },
+                { id: 'p4', full_name: 'Diana Prince', avatar_url: '', banner_url: '', bio: 'Founder', location: 'Sydney', role: 'CEO', company: 'Amazonia', slug: 'diana-prince', latitude: -33.8688, longitude: 151.2093 }
+            ],
+            holons: [
+                { id: 'h1', name: 'Design Team', slug: 'design-team', description: 'Global design team', short_description: 'Designers', holon_image: '', banner_url: '' },
+                { id: 'h2', name: 'Engineering Group', slug: 'eng-group', description: 'Core engineers', short_description: 'Engineers', holon_image: '', banner_url: '' }
+            ],
+            holon_members: [
+                { holon_id: 'h1', profile_id: 'p1', role: 'Lead' },
+                { holon_id: 'h2', profile_id: 'p2', role: 'Member' },
+                { holon_id: 'h2', profile_id: 'p3', role: 'Member' }
+            ],
+            profile_tags: [
+                { profile_id: 'p1', tags: { id: 't1', name: 'UI/UX' } },
+                { profile_id: 'p2', tags: { id: 't2', name: 'React' } }
+            ],
+            profile_categories: [],
+            entity_tags: [],
+            entity_categories: []
+        };
+
+        const mockSupabaseClient = {
+            from: function(tableName) {
+                const chainObj = {
+                    not: function() { return chainObj; },
+                    eq: function() { return chainObj; },
+                    then: function(resolve) {
+                        resolve({ data: dummyData[tableName] || [], error: null });
+                    }
+                };
+                return {
+                    select: function(fields) {
+                        return chainObj;
+                    }
+                };
+            }
+        };
+
+        // Mock MembershipCore which the community-globe expects
+        window.MembershipCore = {
+            supabaseClient: mockSupabaseClient
+        };
+        
+        // Load the local scripts instead of the CDN ones to test local changes
+        window.CommunityGlobeConfig = {
+            containerId: 'community-globe'
+        };
+    </script>
+    
+    <!-- Load Three.js and OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Load local components -->
+    <script src="./land-data.js"></script>
+    <link rel="stylesheet" href="./community-globe-v3.css">
+    <script src="./community-globe-v3.js"></script>
+    
+    <script>
+        // Init the globe
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof window.CommunityGlobe !== 'undefined') {
+                window.CommunityGlobe.init({ containerId: 'community-globe' });
+            }
+        });
+    </script>
+</body>
+</html>

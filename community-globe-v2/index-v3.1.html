@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Awakening Earth — V3.1 Local Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #community-globe {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="community-globe"></div>
+
+    <script>
+        // =====================================================================
+        // Real Supabase connection
+        // =====================================================================
+        var SUPABASE_URL = 'https://wdqubllxlxculugmxzrs.supabase.co';
+        var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndkcXVibGx4bHhjdWx1Z214enJzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI5Mjc1NTIsImV4cCI6MjA4ODUwMzU1Mn0.hruzyMVTR8C-TMVYTsofDMryoOlah07RLS4wFdlCOxU';
+
+        var supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        window.MembershipCore = {
+            supabaseClient: supabaseClient
+        };
+
+        window.CommunityGlobeConfig = {
+            containerId: 'community-globe'
+        };
+    </script>
+
+    <!-- Three.js and OrbitControls -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- Local components -->
+    <script src="./land-data.js"></script>
+    <link rel="stylesheet" href="./community-globe-v3.1.css">
+    <script src="./community-globe-v3.1.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof window.CommunityGlobe !== 'undefined') {
+                window.CommunityGlobe.init({ containerId: 'community-globe' });
+            }
+        });
+    </script>
+</body>
+</html>
