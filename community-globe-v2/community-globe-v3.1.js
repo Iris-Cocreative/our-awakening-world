@@ -949,7 +949,7 @@
         this.controls.enablePan = false;
         this.controls.minDistance = 8;
         this.controls.maxDistance = 40;
-        this.controls.rotateSpeed = 0.5;
+        this.controls.rotateSpeed = w < 768 ? 0.25 : 0.5;
         this.controls.zoomSpeed = 0.8;
         this.controls.autoRotate = true;
         this.controls.autoRotateSpeed = 0.3;
@@ -2552,6 +2552,7 @@
                     self.isPreparing2D = false; self.morphDir = 1;
                     self.controls.enablePan = true; self.controls.enableZoom = true; self.controls.enableRotate = false;
                     self.controls.mouseButtons = { LEFT: THREE.MOUSE.PAN, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
+                    self.controls.touches = { ONE: THREE.TOUCH.PAN, TWO: THREE.TOUCH.DOLLY_PAN };
                 }
             }
 
@@ -2563,6 +2564,7 @@
                     self.controls.enableRotate = true; self.controls.enablePan = false;
                     self.controls.enableZoom = true; self.controls.autoRotate = true;
                     self.controls.mouseButtons = { LEFT: THREE.MOUSE.ROTATE, MIDDLE: THREE.MOUSE.DOLLY, RIGHT: THREE.MOUSE.PAN };
+                    self.controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.DOLLY_PAN };
                     if (self._saved3DPosition) { self.camera.position.copy(self._saved3DPosition); self.controls.target.copy(self._saved3DTarget); }
                     self._saved3DPosition = null; self._saved3DTarget = null;
                     self._flatCameraPosition = null; self._flatCameraTarget = null;
