@@ -74,24 +74,47 @@
             justify-content: center;
         }
 
-        .statement {
+        .bio {
             max-width: 676px;
         }
 
-        .statement h1 {
-            font-weight: 300;
+        .bio .name {
+            font-weight: 400;
             font-size: clamp(1.8rem, 2.8vw, 2.6rem);
             letter-spacing: -0.02em;
-            margin-bottom: 0.2em;
+            margin-bottom: 0.15em;
             color: #021a29;
         }
 
-        .statement .subtitle {
+        .bio .role {
             font-weight: 300;
-            font-style: italic;
-            font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
             color: #88969f;
-            margin-bottom: 2.2em;
+            line-height: 1.6;
+        }
+
+        .bio .role a {
+            color: #88969f;
+            text-decoration: underline;
+            text-underline-offset: 0.15em;
+            transition: color 0.2s;
+        }
+
+        .bio .role a:hover {
+            color: #021a29;
+        }
+
+        .statement {
+            max-width: 676px;
+            margin-top: 2.5em;
+        }
+
+        .statement h2 {
+            font-weight: 300;
+            font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+            letter-spacing: -0.01em;
+            margin-bottom: 1.5em;
+            color: #021a29;
         }
 
         .statement p {
@@ -152,9 +175,13 @@
         </div>
         <div class="divider"></div>
         <div class="text-col">
+            <div class="bio">
+                <div class="name">James Bolden</div>
+                <div class="role">Creative, Technician, Founder of <a href="https://www.iriscocreative.com/">Iris Cocreative</a></div>
+            </div>
+
             <div class="statement">
-                <h1>Artist Statement</h1>
-                <p class="subtitle">James — Our Awakening World</p>
+                <h2>Artist Statement</h2>
 
                 <p>I am not an I.</p>
 
