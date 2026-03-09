@@ -507,27 +507,43 @@
         this.playerModal.innerHTML =
             '<div class="cg-player-inner">' +
               '<div class="cg-player-controls">' +
+                '<button class="cg-player-minimize" title="Minimize">\u2013</button>' +
                 '<button class="cg-player-expand" title="Expand">\u2922</button>' +
                 '<button class="cg-player-close" title="Close">\u00d7</button>' +
               '</div>' +
               '<div class="cg-player-content" id="cg-player-content"></div>' +
               '<div class="cg-player-label" id="cg-player-label"></div>' +
+              '<div class="cg-player-minimize-icon">\u266b</div>' +
             '</div>';
         this.container.appendChild(this.playerModal);
 
         var playerExpandBtn = this.playerModal.querySelector('.cg-player-expand');
         var playerCloseBtn = this.playerModal.querySelector('.cg-player-close');
+        var playerMinimizeBtn = this.playerModal.querySelector('.cg-player-minimize');
         if (playerExpandBtn) {
             playerExpandBtn.addEventListener('click', function() {
                 self.playerModal.classList.toggle('expanded');
                 self.playerExpanded = self.playerModal.classList.contains('expanded');
             });
         }
+        if (playerMinimizeBtn) {
+            playerMinimizeBtn.addEventListener('click', function() {
+                self.playerModal.classList.add('minimized');
+            });
+        }
+        // Click minimized player to restore
+        this.playerModal.querySelector('.cg-player-inner').addEventListener('click', function(e) {
+            if (self.playerModal.classList.contains('minimized')) {
+                e.stopPropagation();
+                self.playerModal.classList.remove('minimized');
+            }
+        });
         if (playerCloseBtn) {
             playerCloseBtn.addEventListener('click', function() {
                 self.playerModal.classList.remove('visible');
                 self.playerModal.classList.remove('expanded');
                 self.playerModal.classList.remove('video-player');
+                self.playerModal.classList.remove('minimized');
                 self.playerExpanded = false;
                 var content = self.playerModal.querySelector('#cg-player-content');
                 if (content) content.innerHTML = '';
