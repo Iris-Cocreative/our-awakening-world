@@ -1165,14 +1165,14 @@
     };
 
     CommunityGlobe.prototype._buildContinentFills = function() {
-        var canvas = document.createElement('canvas'); canvas.width = 4096; canvas.height = 2048;
+        var canvas = document.createElement('canvas'); canvas.width = 5824; canvas.height = 2912;
         var ctx = canvas.getContext('2d'); ctx.clearRect(0, 0, canvas.width, canvas.height);
         var fillTex = new THREE.CanvasTexture(canvas); fillTex.minFilter = THREE.LinearFilter;
         this._continentTex = fillTex; // store ref for ocean line masking
         var self = this;
         var imageObj = new Image(); imageObj.crossOrigin = "Anonymous";
         var basePath = (window.CommunityGlobeConfig && window.CommunityGlobeConfig.assetBasePath) || './';
-        imageObj.src = basePath + "Iris_a_canvas_covered_in_paint_beautiful_abstract_art_thick_bru_9685ecde-4301-4db4-8f52-1df4ad378f65.png";
+        imageObj.src = basePath + "globe-paint-texture-v2.jpg";
         imageObj.onload = function() {
             function mp(lon, lat) { return { x: (lon + 180) * (canvas.width / 360), y: (90 - lat) * (canvas.height / 180) }; }
             ctx.beginPath();
