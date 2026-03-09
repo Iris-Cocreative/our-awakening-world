@@ -288,6 +288,7 @@
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
+    object-position: top;
     flex-shrink: 0;
     background: #f0f0f0;
 }
@@ -330,6 +331,7 @@
     height: auto;
     display: block;
     object-fit: cover;
+    object-position: top;
     max-height: 200px;
 }
 
@@ -1443,9 +1445,10 @@
     }
 
     .cg-player-modal {
-        bottom: 12px;
+        top: 12px;
         left: 12px;
         right: 12px;
+        bottom: auto;
         width: auto;
     }
     .cg-player-modal.video-player {
@@ -1453,6 +1456,10 @@
     }
     .cg-player-modal.expanded {
         top: 12px;
+        bottom: auto;
+    }
+    .cg-player-expand {
+        display: none !important;
     }
 
     .cg-action-buttons {
